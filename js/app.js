@@ -99,7 +99,8 @@ function initScrollReveal() {
 }
 
 // Learning Section Curriculum Toggle
-function toggleCurriculum(containerId, btn) {
+function toggleCurriculum(btn) {
+    const containerId = btn.getAttribute('data-curriculum-toggle');
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -121,4 +122,9 @@ function toggleCurriculum(containerId, btn) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
+
+    // Bind curriculum toggle buttons
+    document.querySelectorAll('[data-curriculum-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => toggleCurriculum(btn));
+    });
 });
