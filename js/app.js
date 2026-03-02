@@ -98,4 +98,27 @@ function initScrollReveal() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initScrollReveal);
+// Learning Section Curriculum Toggle
+function toggleCurriculum(containerId, btn) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const isHidden = container.classList.contains('hidden');
+    container.classList.toggle('hidden');
+
+    // Update button text and icon
+    if (isHidden) {
+        btn.innerHTML = '<i data-lucide="chevron-up" class="w-4 h-4"></i> <span>Hide Course Track</span>';
+    } else {
+        btn.innerHTML = '<i data-lucide="list" class="w-4 h-4"></i> <span>View Course Track</span>';
+    }
+
+    // Re-initialize Lucide icons for the new button content
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+});
