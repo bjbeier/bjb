@@ -120,7 +120,37 @@ function toggleCurriculum(btn) {
     }
 }
 
+// ==================== BACK TO TOP BUTTON INITIALIZATION ====================
+function initBackToTop() {
+    if (!document.body.id) document.body.id = 'top';
+
+    const bttWrapper = document.createElement('div');
+    bttWrapper.className = 'back-to-top-wrapper';
+
+    const bttButton = document.createElement('a');
+    bttButton.href = '#top';
+    bttButton.className = 'back-to-top-button';
+    bttButton.setAttribute('aria-label', 'Back to top');
+    bttButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>`;
+
+    bttWrapper.appendChild(bttButton);
+    document.body.appendChild(bttWrapper);
+
+    const checkScroll = () => {
+        const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollPos > 300) {
+            bttWrapper.classList.add('visible');
+        } else {
+            bttWrapper.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Run once in case already scrolled
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initBackToTop();
     initScrollReveal();
 
     // Bind curriculum toggle buttons
