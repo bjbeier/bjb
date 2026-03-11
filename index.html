@@ -181,6 +181,24 @@
                 height: 45px;
             }
         }
+        /* ==================== CERT LINK RESPONSIVE TEXT ==================== */
+        .cert-link-full {
+            display: none;
+        }
+
+        .cert-link-short {
+            display: inline;
+        }
+
+        @media (min-width: 640px) {
+            .cert-link-full {
+                display: inline;
+            }
+
+            .cert-link-short {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -509,11 +527,12 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 mt-auto">
-                        <a href="https://www.credly.com/badges/dce0b99e-9056-423f-921c-dbb65f5364bf" target="_blank"
-                            rel="noopener noreferrer"
-                            class="flex items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-blue-900/20 whitespace-nowrap">
-                            View Official Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </a>
+                        <span
+                            class="flex items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 bg-white/5 border border-white/10 text-slate-500 text-sm font-bold rounded-xl cursor-not-allowed opacity-50 whitespace-nowrap"
+                            title="Complete all courses to unlock">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            View AI Pro Certificate
+                        </span>
 
                         <button data-curriculum-toggle="google-ai-curriculum"
                             class="flex items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-sm font-semibold rounded-xl transition-all whitespace-nowrap">
@@ -525,8 +544,13 @@
                     <!-- Curriculum Rollup (Hidden Inside Card) -->
                     <div id="google-ai-curriculum" class="hidden mt-6 pt-6 border-t border-white/5 space-y-3">
                         <div class="flex items-center gap-3 p-2 rounded-lg bg-green-500/5 border border-green-500/10">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
-                            <span class="text-xs text-slate-300">Google AI Fundamentals</span>
+                            <i data-lucide="check-circle" class="w-4 h-4" style="color: #22c55e"></i>
+                            <span class="text-xs text-slate-300 flex-1">Google AI Fundamentals</span>
+                            <a href="https://www.credly.com/badges/dce0b99e-9056-423f-921c-dbb65f5364bf"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-xs text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 shrink-0">
+                                <span class="cert-link-full">View Certificate</span><span class="cert-link-short">View Cert</span> <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
                         </div>
                         <div class="flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-white/5 opacity-60">
                             <i data-lucide="hourglass" class="w-4 h-4 text-slate-500"></i>
