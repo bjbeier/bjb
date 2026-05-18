@@ -99,19 +99,21 @@ function initScrollReveal() {
 }
 
 // Learning Section Curriculum Toggle
-function toggleCurriculum(btn) {
-    const containerId = btn.getAttribute('data-curriculum-toggle');
+function toggleCurriculum(containerId, btn) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     const isHidden = container.classList.contains('hidden');
     container.classList.toggle('hidden');
 
+    const showText = btn.getAttribute('data-show-text') || 'View Course Track';
+    const hideText = btn.getAttribute('data-hide-text') || 'Hide Course Track';
+
     // Update button text and icon
     if (isHidden) {
-        btn.innerHTML = '<i data-lucide="chevron-up" class="w-4 h-4"></i> <span>Hide Course Track</span>';
+        btn.innerHTML = `<i data-lucide="chevron-up" class="w-4 h-4"></i> <span>${hideText}</span>`;
     } else {
-        btn.innerHTML = '<i data-lucide="list" class="w-4 h-4"></i> <span>View Course Track</span>';
+        btn.innerHTML = `<i data-lucide="list" class="w-4 h-4"></i> <span>${showText}</span>`;
     }
 
     // Re-initialize Lucide icons for the new button content
@@ -152,9 +154,4 @@ function initBackToTop() {
 document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initScrollReveal();
-
-    // Bind curriculum toggle buttons
-    document.querySelectorAll('[data-curriculum-toggle]').forEach(btn => {
-        btn.addEventListener('click', () => toggleCurriculum(btn));
-    });
 });

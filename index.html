@@ -509,6 +509,73 @@
             </div>
 
             <div class="reveal grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Combat Hapkido Black Belt Card -->
+                <div
+                    class="glass-card p-6 rounded-2xl border border-white/10 hover:border-red-500/30 transition-all group flex flex-col h-full shadow-lg shadow-black/30 hover:shadow-red-950/10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="p-2 bg-white/5 rounded-lg border border-white/10 w-12 h-12 flex items-center justify-center shrink-0">
+                            <img src="images/logos/cmaalogo.webp" alt="Combat Hapkido" class="w-8 h-8 object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white leading-tight">Combat Hapkido Black Belt</h3>
+                            <p class="text-xs text-red-400 font-mono mt-1">2nd Degree (Ee Dan) • ICHF</p>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-400 mb-6 flex-1">
+                        Advanced rank in the modern science of self-defense, certified under the International Combat Hapkido Federation. Focused on real-world tactical defense, discipline, and continuous self-mastery.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 mt-auto">
+                        <span
+                            class="flex items-center justify-center gap-2 w-full sm:w-fit px-4 py-2.5 bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold rounded-xl whitespace-nowrap">
+                            <!-- Custom Martial Arts Gi with Belt SVG icon (🥋 style) - Proportional Aspect Ratio -->
+                            <svg class="w-4 h-4 text-red-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <!-- Jacket outer outline (balanced height-to-width ratio) -->
+                                <path d="M6 3h12l4 4v3l-4-1v9H6v-9l-4 1V7l4-4Z" />
+                                <!-- Overlapping lapels (left-over-right) -->
+                                <path d="M16 3L8 14" />
+                                <path d="M8 3l3.5 5" />
+                                <path d="M12.5 11l3.5 3" />
+                                <!-- Tied belt horizontal strap across waist -->
+                                <path d="M6 14h12" stroke-width="2.5" />
+                                <!-- Tied belt knot and hanging tails -->
+                                <path d="M11 14l-2 6" stroke-width="2" />
+                                <path d="M13 14l2 6" stroke-width="2" />
+                                <circle cx="12" cy="14" r="1.2" fill="currentColor" />
+                            </svg>
+                            Active Rank: 2nd Degree
+                        </span>
+
+                        <button onclick="toggleCurriculum('hapkido-track', this)"
+                            data-show-text="View Advancement"
+                            data-hide-text="Hide Advancement"
+                            class="flex items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-sm font-semibold rounded-xl transition-all whitespace-nowrap">
+                            <i data-lucide="list" class="w-4 h-4"></i>
+                            <span>View Advancement</span>
+                        </button>
+                    </div>
+
+                    <!-- Curriculum Rollup (Hidden Inside Card) -->
+                    <div id="hapkido-track" class="hidden mt-6 pt-6 border-t border-white/5 space-y-3">
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-red-500/5 border border-red-500/10">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0"></i>
+                            <div class="flex-1">
+                                <span class="text-xs font-bold text-slate-200 block">Second Degree Black Belt (Ee Dan)</span>
+                                <span class="text-[10px] text-slate-400 block font-mono">Championship Martial Arts Academy • May 2026</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-white/5 opacity-80">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                            <div class="flex-1">
+                                <span class="text-xs font-semibold text-slate-300 block">First Degree Black Belt (Cho Dan)</span>
+                                <span class="text-[10px] text-slate-400 block font-mono">Championship Martial Arts Academy • May 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Google AI Professional Certificate Card -->
                 <div
                     class="glass-card p-6 rounded-2xl border border-white/10 hover:border-brand-accent/30 transition-all group flex flex-col h-full">
@@ -537,7 +604,7 @@
                             View AI Pro Certificate
                         </span>
 
-                        <button data-curriculum-toggle="google-ai-curriculum"
+                        <button onclick="toggleCurriculum('google-ai-curriculum', this)"
                             class="flex items-center justify-center gap-2 w-full sm:w-fit px-6 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-sm font-semibold rounded-xl transition-all whitespace-nowrap">
                             <i data-lucide="list" class="w-4 h-4"></i>
                             <span>View Course Track</span>
